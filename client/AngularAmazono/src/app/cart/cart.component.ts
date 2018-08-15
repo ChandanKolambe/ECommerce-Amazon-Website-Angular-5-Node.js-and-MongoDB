@@ -48,6 +48,37 @@ export class CartComponent implements OnInit {
     this.cartItems.forEach(data => {
       this.quantities.push(1);
     });
+    this.handler = StripeCheckout.configure({
+      key: environment.stripeKey,
+      image: 'assets/img/logo.png',
+      locale: 'auto',
+      token: async stripeToken => {
+        let products;
+        products = [];
+        this.cartItems.forEach((d, index) => {
+          products.push({
+            product: d['_id'],
+            quantity: this.quantities[index]
+          });
+        });
+
+        try {
+          const data = await this.rest.post(
+            'http://localhost:3030/api/payment',
+            {
+              totalPrice: this.cartTotal,
+              products,
+              stripeToken
+            }
+          );
+          data['success']
+            ? (this.data.clearCart(), this.data.success('Purchase Successful'))
+            : this.data.error(data['message']);
+        } catch (error) {
+          this.data.error(error['message']);
+        }
+      }
+    });
   }
 
   validate() {
