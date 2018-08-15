@@ -9,6 +9,7 @@
   "author": "Chandan",
   "license": "ISC",
   "dependencies": {
+    "algoliasearch": "^3.30.0",
     "async": "^2.6.1",
     "aws-sdk": "^2.311.0",
     "bcrypt-nodejs": "0.0.3",
@@ -17,6 +18,7 @@
     "faker": "^4.1.0",
     "jsonwebtoken": "^8.3.0",
     "mongoose": "^4.13.7",
+    "mongoose-algolia": "^1.7.1",
     "mongoose-deep-populate": "^3.1.1",
     "morgan": "^1.9.0",
     "multer": "^1.3.1",
