@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: false })); //
 app.use(morgan("dev"));
 app.use(cors());
 
-mongoose.connect(config.dbUrl, err => {
+mongoose.connect(config.dbUrl, { useMongoClient: true }, err => {
     if (err) {
         console.log("Error:" + err);
     } else {
