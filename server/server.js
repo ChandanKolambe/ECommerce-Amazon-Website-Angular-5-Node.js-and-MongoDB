@@ -20,14 +20,19 @@ mongoose.connect(config.dbUrl, err => {
     }
 });
 
-// app.get("/", (req, res, next) => {
-//   res.json({ user: "Chandan" });
-// });
+/*
+ app.get("/", (req, res, next) => {
+   res.json({ user: "Chandan" });
+ });
 
 app.get('/', function (req, res) {
 
     res.send('Hello World')
 })
+*/
+
+const userRoutes = require('./routes/account');
+app.use('/api/accounts', userRoutes);
 
 app.listen(config.port, err => {
     console.log("Server on port " + config.port);
