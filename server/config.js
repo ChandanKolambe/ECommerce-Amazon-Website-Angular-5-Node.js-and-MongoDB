@@ -1,5 +1,5 @@
 module.exports = {  //
-    dbUrl: "mongodb://davislf2:db123@ds249415.mlab.com:49415/amazono-app",
+    dbUrl: "mongodb://chandan:abc123@ds253821.mlab.com:53821/amazonowebapplication",
     port: 3030,
-    secret: "davissecret"
+    secret: "chandansecret"
 };

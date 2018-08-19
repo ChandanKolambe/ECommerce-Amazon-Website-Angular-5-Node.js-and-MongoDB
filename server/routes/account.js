@@ -26,7 +26,7 @@ router.post('/signup', (req, res, next) => {
 
         var token = jwt.sign({
           user: user
-        }, CONFIG.SECRET, {
+        }, config.secret, {
           expiresIn: '7d'
         });
 
@@ -62,7 +62,7 @@ router.post('/login', (req, res, next) => {
 
                 var token = jwt.sign({
                   user: user
-                }, CONFIG.SECRET, {
+                }, config.secret, {
                   expiresIn: '7d'
                 });
 
