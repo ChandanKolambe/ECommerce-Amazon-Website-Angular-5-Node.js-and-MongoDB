@@ -12,7 +12,9 @@ export class AppComponent {
   searchTerm = '';
   isCollapsed = true; //whether mobile menu is expanded or collapsed
 
-  constructor(private router: Router, private data: DataService) { }
+  constructor(private router: Router, private data: DataService) {
+    this.data.getProfile();
+  }
 
   get token() { //return login token
     return localStorage.getItem('token');
