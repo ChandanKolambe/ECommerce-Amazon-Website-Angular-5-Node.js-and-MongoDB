@@ -35,7 +35,7 @@ export class SettingsComponent implements OnInit {
       if (settings['email']) {
         if (settings['newPwd']) {
           if (settings['pwdConfirm']) {
-            if (settings['newPwd'] === settings['pwdConfigm']) {
+            if (settings['newPwd'] === settings['pwdConfirm']) {
               return true;
             } else {
               this.data.error('Password do not match!');
@@ -44,7 +44,7 @@ export class SettingsComponent implements OnInit {
             this.data.error('Please enter confirmation password!');
           }
         } else {
-          if (!settings['pwdConfigm']) {
+          if (!settings['pwdConfirm']) {
             return true;
           } else {
             this.data.error('Please enter new password!');
